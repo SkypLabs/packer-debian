@@ -4,7 +4,7 @@
 apt-get update && apt-get install -y sudo curl
 
 # Add vagrant user
-useradd vagrant
+useradd vagrant -s /bin/bash -m
 
 # Do not require a password with sudo
 # for vagrant user
