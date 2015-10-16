@@ -179,6 +179,16 @@
       "scripts": [
         "scripts/cleanup.sh"
       ]
+    },
+    {
+      "type": "file",
+      "source": "config/sshd.service",
+      "destination": "/etc/systemd/system/sshd.service"
+    },
+    {
+      "type": "file",
+      "source": "config/sshd-keygen.service",
+      "destination": "/etc/systemd/system/sshd-keygen.service"
     }
   ],
   "post-processors": [
