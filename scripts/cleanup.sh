@@ -22,6 +22,9 @@ cat /dev/null > /var/log/grubby
 # Remove the udev persistent device rules
 rm -f /etc/udev/rules.d/70-persistent-*.rules
 
+# Remove the apt proxy configuration
+sed '/^Acquire::http::Proxy/d' -i /etc/apt/apt.conf
+
 # Clean /tmp out
 rm -rf /tmp/*
 rm -rf /var/tmp/*
