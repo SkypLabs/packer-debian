@@ -1,6 +1,6 @@
 {
-  "debian_version": "8.2.0",
+  "debian_version": "8.3.0",
   "preseed_file": "debian8.cfg",
   "iso_filename": "netinst",
-  "iso_checksum": "d393d17ac6b3113c81186e545c416a00f28ed6e05774284bb5e8f0df39fcbcb9"
+  "iso_checksum": "dd25bcdde3c6ea5703cc0f313cde621b13d42ff7d252e2538a11663c93bf8654"
 }
