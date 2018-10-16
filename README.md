@@ -4,17 +4,17 @@ This repository contains files used by [Packer][packer] to create Debian images 
 
 ## Hypervisors supported
 
-* VirtualBox (vbox)
-* VMware (vmware)
-* KVM (kvm)
+* VirtualBox (`vbox`)
+* VMware (`vmware`)
+* KVM (`kvm`)
 
 ## Vagrant support
 
-In order to create an image to be used by [Vagrant][vagrant], you have to use one of these builders :
+In order to create an image to be used with [Vagrant][vagrant], you have to use one of these builders:
 
-* vbox4vagrant
-* vmware4vagrant
-* kvm4vagrant
+* `vbox4vagrant`
+* `vmware4vagrant`
+* `kvm4vagrant`
 
 ## Variables available
 
@@ -30,17 +30,17 @@ In order to create an image to be used by [Vagrant][vagrant], you have to use on
       timeout           = 30m
       username          = root
 
-In addition, several variables files are available in order to precise which version of Debian you want to use. The Packer *-var-file* option has to be used with one of these files.
+In addition, several variable files are available in order to precise which version of Debian you want to use. The Packer `-var-file` option has to be used with one of these files.
 
 ## Use this template behind a proxy
 
-In order to use this template behind an *explicit proxy*, you have to add this last in some files :
+In order to use this template behind an *explicit proxy*, you need to add this last one in some files:
 
-* In the preseed file :
+* In the preseed file:
 
         d-i mirror/http/proxy string <explicit proxy>
 
-* In the vagrant.sh script, before the curl command :
+* In the `vagrant.sh` script, before the `curl` command:
 
         # Download the insecure public key from GitHub official repository
         export https_proxy=<explicit proxy>
@@ -51,11 +51,11 @@ In order to use this template behind an *explicit proxy*, you have to add this l
 
 ## Examples
 
-To create an image of Debian 8 for all the hypervisors, including images with Vagrant support :
+To create an image of Debian 8 with all the hypervisors, including Vagrant images:
 
     packer build -var-file debian8.json packer-debian.json
 
-To create an Debian 8 image only for VirtualBox with Vagrant support and some default variable values overwritten, for example, *headless* and *timeout* :
+To create a Vagrant Debian 8 image only with VirtualBox and overwrite some default variables' value (here, `headless` and `timeout`):
 
     packer build -only vbox4vagrant -var 'headless=false' -var 'timeout=1h' -var-file debian8.json packer-debian.json
 
