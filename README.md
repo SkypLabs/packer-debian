@@ -30,7 +30,7 @@ In order to create an image to be used with [Vagrant][vagrant], you have to use 
       timeout           = 30m
       username          = root
 
-In addition, several variable files are available in order to precise which version of Debian you want to use. The Packer `-var-file` option has to be used with one of these files.
+In addition, several variable files are available to precise which version of Debian should be used via the Packer `-var-file` option.
 
 ## Use this template behind a proxy
 
